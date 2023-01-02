@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+  
+	<menuitem title="Person_Details" name="persion.All.details" />
+	<menuitem title="Person_All_Info"
+		name="informatuion.per.person" action="All.information"
+		parent="persion.All.details" />
+	<action-view name="All.information" title="persionalinfo"
+		model="com.axelor.information.db.Person">
+		<view type="grid" name="person-grid" />
+		<view type="form" name="person-form" />
+		<view type="cards" name="persion-cards" />
+		<view type="kanban" name="person.kanban" />
+	</action-view>
+	
+	<action-view name="card.one.person" title="oneinfo"
+		model="com.axelor.information.db.Person">
+		<view type="cards" name="persion-cards" />
+	</action-view>
+
+
+
+
+	<menuitem title="Master Details" name="persion.Master.details" />
+	<menuitem title="Person_All_Info_Master"
+		name="informatuion.all.person" action="Master.information"
+		parent="persion.Master.details" />
+
+	<action-view name="Master.information" title="Masterinfo"
+		model="com.axelor.information.db.Person">
+		<view type="grid" name="person-grid" />
+		<view type="form" name="person-form" />
+		<view type="cards" name="persion-cards" />
+		<view-param name="details-view" value="true" />
+		<!-- the below attr is giving the bydefault view the we are using before -->
+		<!-- <view-param name="another-form-view" value="true"/> -->
+	</action-view>
+
+
+	<menuitem title="Projects" name="project.info" />
+
+	<menuitem title="Incharges" name="incharge.info"
+		parent="project.info" action="All.incharge" />
+	<action-view name="All.incharge" title="Incharge"
+		model="com.axelor.information.db.Incharge">
+		<view type="grid" name="incharge.grid" />
+		<view type="form" name="incharge.from" />
+
+	</action-view>
+
+
+
+	<menuitem title="project" name="project.info.all"
+		parent="project.info" action="All.project" />
+	<action-view name="All.project" title="Projects"
+		model="com.axelor.information.db.ProjectTask">
+		<view type="grid" name="projectTask.grid" />
+		<view type="form" name="projectTask.from" />
+		<view type="calendar" name="project-task-calendar-my" />
+		<view type="gantt" name="gantt.project"/>
+	</action-view>
+
+
+
+<action-view name="custum.view" title="cus">
+<view type="dashboard" name="imp.info"/>
+</action-view>
+</object-views>
+
+
+

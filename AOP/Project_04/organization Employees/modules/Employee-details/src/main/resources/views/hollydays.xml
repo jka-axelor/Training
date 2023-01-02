@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+
+	<grid name="hollyday-grid" title="Hollydays"
+		model="com.axelor.employees.db.Hollyday" >
+		<field name="numofdaays" />
+		<field name="serial"  />
+		<field name="resion" />
+		<field name="starting_from" />
+		<field name="ending_on" />
+	</grid>
+
+
+
+	<form name="hollyday-form" title="Hollyday"
+		model="com.axelor.employees.db.Hollyday">
+		<panel title="HollyDays"  icon="fas fa-suitcase-rolling" icon-background="violet">
+			<field name="numofdaays" />
+			<field name="serial" />
+			<field name="starting_from" required="true"/>
+			<field name="ending_on" required="true"/>
+			<field name="resion" required="true"/>
+		</panel>
+	</form>
+</object-views>

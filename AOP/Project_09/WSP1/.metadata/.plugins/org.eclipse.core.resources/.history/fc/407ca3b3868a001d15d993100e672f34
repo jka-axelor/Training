@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<form name="employees-form" title="Employees"
+		model="com.axelor.employees.db.Employees"
+		onNew="action.employees.attrs.addNewSelction.onNew.job"
+		onSave="action.group..demo1" width="large">
+		<panel title="Employees">
+			<field name="id" readonly="true" title="ID" />
+			<field name="eName" />
+			<field name="job" 
+				onChange="alter.some.attr,get.sal.action" widget="SingleSelect" />
+			<field name="mgr" />
+			<field name="hiredate" />
+			<field name="sal" />
+			<field name="comm" />
+			<field name="deptno" onSelect="alter.some.comm.onChang" />
+
+
+
+			<button onClick="default-emp-record"
+				name="default-emp-valsetting" css="btn-success" title="Default" />
+			<button onClick="test.Action.Methord"
+				name="test.Action.Methord" />
+			<button onClick="create.hello" name="script.test.demo1"
+				title="script Action Test" />
+			<button onClick="validate.time.ofHire.demo1"
+				name="Action.validate.demo1.test" title="valid Action" />
+			<button onClick="validate.the.job.profile"
+				name="Action.validate.demo2.test" title="job validation" />
+			<button onClick="action.condition.demo1"
+				name="Action.condition.test1" title="For check" />
+			<button onClick="create.emp" name="action.script.use.json"
+				title="new dept in" />
+			<button
+				onClick="com.axelor.employees.web.HellowController:says"
+				name="greet" title="Greet" />
+
+			<help css="alert-info">
+<![CDATA[
+every thing need for the form only
+]]>
+			</help>
+
+			<static>
+<![CDATA[
+Some static text goes here....
+]]>
+			</static>
+
+		</panel>
+
+		<panel-mail>
+			<mail-messages limit="4" />
+			<mail-followers />
+		</panel-mail>
+
+	</form>
+
+
+
+	<grid name="employees-grid" title="Employees"
+		model="com.axelor.employees.db.Employees" edit-icon="true">
+		<toolbar>
+			<button onClick="chart.info.all" name="all.charts"
+				icon="fa-regular fa-eye" />
+		</toolbar>
+		<field name="id" readonly="true" />
+		<field name="eName" />
+		<field name="job" />
+		<field name="mgr" />
+		<field name="hiredate" widget="time" />
+		<field name="sal" />
+		<field name="comm" />
+	</grid>
+
+
+	<action-record name="default-emp-record"
+		model="com.axelor.employees.db.Employees">
+		<field name="hiredate" expr="eval:__date__" />
+	</action-record>
+
+	<action-method name="test.Action.Methord"
+		model="com.axelor.employees.db.Employees">
+		<call class="com.Axelor.sal.Employees.GetSal" method="getSal(mm)" />
+	</action-method>
+
+
+	<action-record name="default-emp-record-sal"
+		model="com.axelor.employees.db.Employees">
+		<field name="sal" expr="action:test.Action.Methord" />
+	</action-record>
+
+	<action-record name="get.sal.action"
+		model="com.axelor.employees.db.Employees">
+		<field name="sal" expr="100" if="eval:job=='CLERK'" />
+		<field name="sal" expr="200" if="eval:job=='SALESMAN'" />
+		<field name="sal" expr="400" if="eval:job=='MANAGER'" />
+		<field name="sal" expr="1000" if="eval:job=='PRESIDENT'" />
+		<field name="sal" expr="600" if="eval:job=='ANALYST'" />
+	</action-record>
+
+
+	<action-script name="create.hello"
+		model="com.axelor.employees.db.Employees">
+		<script language="js">
+<![CDATA[
+var req = $request; 
+  var res = $response; 
+var so = req.context;
+var emp = new Employees();
+var job = so.job;
+ res.setValue('eName',job);
+
+]]>
+</script>
+	</action-script>
+
+
+	<action-script name="create.emp"
+		model="com.axelor.employees.db.MetaJasonRecord">
+		<script language="js" transactional="true">
+
+<![CDATA[
+var employees = $json.create('employees');
+ employees.eName="stu";
+ employees.job="Team Lead"; 
+ employees.hiredate=02/11/2021;  
+ employees.sal=300.00 
+ employees.comm=20.00; 
+
+var department = $json.all('department').by('dname', '=', 'one').fetchOne(); 
+    if (department == null) {
+        department = $json.create('department');
+        department.dname = "server";
+        department.loc="canada"
+        department = $json.save(department); 
+}
+employees.deptno=department; 
+$response.values = employees;
+
+
+
+]]>
+</script>
+
+	</action-script>
+
+	<action-validate name="validate.time.ofHire.demo1">
+		<error message="plese enter the the Actiul date"
+			if="hiredate &gt; __date__" />
+		<alert message="No comm set would you like to continu"
+			if="eval:comm==0" />
+	</action-validate>
+
+	<action-validate name="validate.the.job.profile">
+		<info message="plese inset the job" if="eval:job ==null" />
+	</action-validate>
+
+
+	<action-condition name="action.condition.demo1">
+		<check field="comm" error="insert the comm" if="eval:comm==0" />
+		<check field="hiredate" error="insert Actual date"
+			if="hiredate &gt; __date__" />
+		<check field="sal" error="insert sal" if="eval:sal==0" />
+	</action-condition>
+
+
+
+	<action-group name="action.group..demo1">
+		<action name="validate.time.ofHire.demo1" />
+		<action
+			name="action.refrace.daslet.employeePerDepartment.chart" />
+	</action-group>
+
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

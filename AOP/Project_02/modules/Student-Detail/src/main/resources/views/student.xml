@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<grid model="com.axelor.student.db.Student" title="Student"
+		name="Student-grid">
+		<field name="name" />
+		<field name="roll_no" />
+		<field name="classno" />
+	</grid>
+
+	<grid model="com.axelor.student.db.Student" title="Address"
+		name="Address-grid">
+		<field name="city" />
+		<field name="country" />
+		<field name="state" />
+	</grid>
+  <form model="com.axelor.student.db.Student" title="Details" name="Student-Details-form">
+  <panel name="overviewPanel" title="Overview">
+  <field name="fullName" readonly="false" colSpan="12" showTitle="false" >
+        <editor> 
+          <field name="title" colSpan="4" title="Title"/>
+          <field name="firstName" colSpan="4" title="First Name" required="true"/>
+          <field name="lastName" colSpan="4" title="Last Name"/>
+        </editor>
+      </field>
+      <field name="dateOfBirth" colSpan="6" />
+      <field name="email" widget="email" colSpan="6"/>
+  </panel>
+  </form>
+
+
+</object-views>

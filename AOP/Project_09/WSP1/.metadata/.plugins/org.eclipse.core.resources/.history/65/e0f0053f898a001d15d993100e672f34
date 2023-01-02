@@ -1,0 +1,183 @@
+package com.axelor.employees.db;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Objects;
+
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.Type;
+
+import com.axelor.auth.db.AuditableModel;
+import com.axelor.db.annotations.EqualsInclude;
+import com.axelor.db.annotations.Track;
+import com.axelor.db.annotations.TrackEvent;
+import com.axelor.db.annotations.TrackField;
+import com.axelor.db.annotations.TrackMessage;
+import com.axelor.db.annotations.Widget;
+import com.google.common.base.MoreObjects;
+
+@Entity
+@Table(name = "EMPLOYEES_EMPLOYEES", indexes = { @Index(columnList = "deptno") })
+@Track(fields = { @TrackField(name = "eName", on = TrackEvent.ALWAYS), @TrackField(name = "job", on = TrackEvent.UPDATE), @TrackField(name = "hiredate", on = TrackEvent.CREATE), @TrackField(name = "comm"), @TrackField(name = "sal") }, messages = { @TrackMessage(message = "WellCome", condition = "true", tag = "warning", on = TrackEvent.CREATE), @TrackMessage(message = "Some Changes have been  Done", condition = "true", on = TrackEvent.ALWAYS), @TrackMessage(message = "its a job change ", condition = "true", tag = "info", on = TrackEvent.UPDATE), @TrackMessage(message = "Good sal for", condition = "sal >=1000", tag = "success") })
+public class Employees extends AuditableModel {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMPLOYEES_EMPLOYEES_SEQ")
+	@SequenceGenerator(name = "EMPLOYEES_EMPLOYEES_SEQ", sequenceName = "EMPLOYEES_EMPLOYEES_SEQ", allocationSize = 1)
+	private Long id;
+
+	@EqualsInclude
+	@NotNull
+	@Column(unique = true)
+	private String eName;
+
+	@Widget(selection = "job.selection")
+	@NotNull
+	private String job;
+
+	@NotNull
+	private String mgr;
+
+	@NotNull
+	private LocalDate hiredate;
+
+	@Digits(integer = 5, fraction = 2)
+	private BigDecimal sal = BigDecimal.ZERO;
+
+	@Digits(integer = 4, fraction = 2)
+	private BigDecimal comm = BigDecimal.ZERO;
+
+	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private Department deptno;
+
+	@Widget(title = "Attributes")
+	@Basic(fetch = FetchType.LAZY)
+	@Type(type = "json")
+	private String attrs;
+
+	public Employees() {
+	}
+
+	@Override
+	public Long getId() {
+		return id;
+	}
+
+	@Override
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String geteName() {
+		return eName;
+	}
+
+	public void seteName(String eName) {
+		this.eName = eName;
+	}
+
+	public String getJob() {
+		return job;
+	}
+
+	public void setJob(String job) {
+		this.job = job;
+	}
+
+	public String getMgr() {
+		return mgr;
+	}
+
+	public void setMgr(String mgr) {
+		this.mgr = mgr;
+	}
+
+	public LocalDate getHiredate() {
+		return hiredate;
+	}
+
+	public void setHiredate(LocalDate hiredate) {
+		this.hiredate = hiredate;
+	}
+
+	public BigDecimal getSal() {
+		return sal == null ? BigDecimal.ZERO : sal;
+	}
+
+	public void setSal(BigDecimal sal) {
+		this.sal = sal;
+	}
+
+	public BigDecimal getComm() {
+		return comm == null ? BigDecimal.ZERO : comm;
+	}
+
+	public void setComm(BigDecimal comm) {
+		this.comm = comm;
+	}
+
+	public Department getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(Department deptno) {
+		this.deptno = deptno;
+	}
+
+	public String getAttrs() {
+		return attrs;
+	}
+
+	public void setAttrs(String attrs) {
+		this.attrs = attrs;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) return false;
+		if (this == obj) return true;
+		if (!(obj instanceof Employees)) return false;
+
+		final Employees other = (Employees) obj;
+		if (this.getId() != null || other.getId() != null) {
+			return Objects.equals(this.getId(), other.getId());
+		}
+
+		return Objects.equals(geteName(), other.geteName())
+			&& (geteName() != null);
+	}
+
+	@Override
+	public int hashCode() {
+		return 31;
+	}
+
+	@Override
+	public String toString() {
+		return MoreObjects.toStringHelper(this)
+			.add("id", getId())
+			.add("eName", geteName())
+			.add("job", getJob())
+			.add("mgr", getMgr())
+			.add("hiredate", getHiredate())
+			.add("sal", getSal())
+			.add("comm", getComm())
+			.omitNullValues()
+			.toString();
+	}
+}

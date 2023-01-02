@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.axelor.mail.service.MailService"/>
+    <fullyQualifiedTypeName name="com.axelor.mail.service.MailServiceImpl"/>
+    <fullyQualifiedTypeName name="com.axelor.db.Query"/>
+    <fullyQualifiedTypeName name="antlr.collections.List"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.axelor.employees.db.repo.EmployeesRepository"/>
+    <fullyQualifiedTypeName name="com.axelor.employees.db.Employees"/>
+    <fullyQualifiedTypeName name="com.axelor.inject.Beans"/>
+</qualifiedTypeNameHistroy>

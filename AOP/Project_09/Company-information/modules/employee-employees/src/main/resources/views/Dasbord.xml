@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+	
+<dashboard name="dept.info" title="allMasterInfo">
+<dashlet action="chart.dept.emp.bar" name="barDashlet"/>
+<dashlet action="chart.dept.emp.pie"/>
+<dashlet action="chart.dept.emp.area"/>
+<dashlet action="chart.dept.emp.donut"/>
+<dashlet action="chart.dept.emp.hbar"/>
+<dashlet action="chart.dept.emp.line"/>
+<dashlet action="chart.dept.emp.funnel"/>
+<dashlet action="chart.dept.emp.gauge"/>
+<dashlet action="chart.dept.emp.scatter"/>
+<dashlet action="chart.dept.emp.radar"/>
+</dashboard>
+
+<action-view name="chart.dept.emp.bar" title="barchar">
+<view type="chart" name="total.employees.department.bar"/>
+</action-view>
+
+<action-view name="chart.dept.emp.pie" title="barchar">
+<view type="chart" name="total.employees.department.pie"/>
+</action-view>
+
+<action-view name="chart.dept.emp.area" title="barchar">
+<view type="chart" name="total.employees.department.area"/>
+</action-view>
+
+<action-view name="chart.dept.emp.donut" title="barchar">
+<view type="chart" name="total.employees.department.donut"/>
+</action-view>
+
+<action-view name="chart.dept.emp.hbar" title="barchar">
+<view type="chart" name="total.employees.department.hbar"/>
+</action-view>
+
+
+<action-view name="chart.dept.emp.line" title="barchar">
+<view type="chart" name="total.employees.department.line"/>
+</action-view>
+
+<action-view name="chart.dept.emp.funnel" title="barchar">
+<view type="chart" name="total.employees.department.funnel"/>
+</action-view>
+
+<action-view name="chart.dept.emp.gauge" title="barchar">
+<view type="chart" name="total.employees.department.gauge"/>
+</action-view>
+
+<action-view name="chart.dept.emp.radar" title="barchar">
+<view type="chart" name="total.employees.department.scatter"/>
+</action-view>
+
+<action-view name="chart.dept.emp.radar" title="barchar">
+<view type="chart" name="total.employees.department.radar"/>
+</action-view>
+
+</object-views>
+
+
+

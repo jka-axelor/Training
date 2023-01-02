@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+
+	<module package="com.axelor.employees.db" name="employees" />
+	<entity name="Manager" persistable="true" repository="none">
+
+		<string name="title" selection="MR,Mrs" />
+		<string name="firstname" unique="true" required="true" />
+		<string name="middlename" nullable="true" />
+		<string name="lastname" />
+		<date name="dateofjoining" />
+		<long name="phonenumber" column="phno" />
+		<boolean name="active" />
+		<time name="workingtime" />
+		<string name="description" multiline="true" large="true"
+			transient="true" />
+			<one-to-many ref="com.axelor.employees.db.Employees" name="employess" mappedBy="manager" orphanRemoval="false" />
+		<one-to-one ref="com.axelor.employees.db.Department"
+			name="department" />
+		<many-to-many ref="com.axelor.employees.db.Hollyday"
+			name="hollydas" />
+		<!-- <entity-listener class="com.axelor.employees.db.repo.Listener"/> -->
+	</entity>
+
+</domain-models>

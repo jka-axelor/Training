@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+
+	<module package="com.axelor.student.db" name="student" />
+	<sequence name="student-serial" padding="5" initial="1"
+		prefix="SL" />
+	<entity name="Students" cachable="true" persistable="true"
+		logUpdates="true">
+		<datetime name="insertedOn" />
+		<binary name="photo" image="true" />
+		<string name="serial" sequence="student-serial" readonly="true" />
+		<string name="fullName"/>
+<!-- 		<string name="firstname" /> -->
+<!-- 		<string name="middlename" nullable="true" /> -->
+<!-- 		<string name="lastname" /> -->
+		<date name="date_of_barth" />
+		<string name="father_name" />
+		<string name="father_profession" />
+		<string name="mother_name" />
+		<string name="mother_profession" />
+		<string name="birthmark" multiline="true" />
+<!-- 		<index columns="firstname,lastname" name="fullname" /> -->
+
+
+	</entity>
+</domain-models>

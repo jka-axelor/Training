@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	<module package="com.axelor.employees.db" name="employees2" />
+	<entity name="Department2" persistable="true" table="DEPARTMENTS2" lang="java" extends="Department" strategy="SINGLE">
+	<integer name="pin" insertable="true" updatable="false"/>
+	</entity>
+</domain-models>

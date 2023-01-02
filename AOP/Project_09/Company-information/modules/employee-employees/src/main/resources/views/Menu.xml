@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<menuitem name="company.information" title="Company"
+		left="true" />
+	<!-- for Employees -->
+	<menuitem name="information.employees"
+		parent="company.information" title="Employees Information"
+		action="employees.all" order="500" left="true" />
+	<action-view name="employees.all"
+		title="Employees.all.information"
+		model="com.axelor.employees.db.Employees">
+		<view type="grid" name="employees-grid" />
+		<view type="form" name="employees-form" />
+		<view-param name="show-toolbar" value="true" />
+		<view-param name="popup" value="false" />
+		<view-param name="reload-dotted" value="true" />
+<!-- 		<domain>self.job =:code</domain> -->
+<!-- 		<context name="code" expr="MANAGER"/> -->
+	</action-view>
+	<!-- For Bonus info -->
+	<menuitem title="Bonus Information" name="information.bonus"
+		parent="company.information" action="bonus.all"
+		icon="fa-solid fa-fire" icon-background="red" order="200" tag="some"
+		tag-count="true" tag-style="info" />
+	<action-view name="bonus.all" title="Bonus All Information"
+		model="com.axelor.employees.db.Bonus">
+		<view type="grid" name="bonus-grid" />
+		<view type="form" name="bonus-form" />
+		<view-param name="forceEdit" value="true" />
+		<view-param name="forceTitle" value="true" />
+		<view-param name="showArchived" value="true" />
+		<view-param name="details-view" value="true" />
+		<view-param name="limit" value="20" />
+		<view-param name="show-toolbar" value="false" />
+		<view-param name="popup" value="true" />
+		<view-param name="reload-dotted" value="false" />
+	</action-view>
+	<menuitem name="information.Department"
+		parent="company.information" title="department"
+		action="department.all" order="300" top="true" hidden="false" />
+	<action-view name="department.all"
+		title="Department information"
+		model="com.axelor.employees.db.Department">
+		<view type="grid" name="department-grid" />
+		<view type="form" name="department-form" />
+	</action-view>
+	<action-view name="chart.info.all" title="charts all">
+		<view type="dashboard" name="dept.info" />
+	</action-view>
+
+<menuitem title="Occasional" name="information.occasional.all" parent="company.information" action="all.occational"/>
+
+<action-view name="all.occational" title="all occasional" model="com.axelor.employees.db.Occasional">
+<view type="grid" name="occasional.grid"/>
+<view type="form" name="occasional.form"/>
+</action-view>
+
+
+<menuitem title="Scenario" name="information.scenario" parent="company.information" action="all.scenario"/>
+
+
+
+
+
+
+	<action-attrs name="alter.some.attr"
+		model="com.axelor.employees.db.Employees">
+		<attribute name="hidden" for="comm"
+			expr="eval:job=='PRESIDENT'" />
+	</action-attrs>
+
+<!-- <action-attrs name="alter.doman.some.changes" model="com.axelor.employees.db.Employees"> -->
+<!-- <attribute name="domain" for="job" expr="self.eName"/> -->
+<!-- </action-attrs> -->
+
+
+<action-attrs name="alter.some.title.change" model="com.axelor.employees.db.Employees">
+<attribute name="title" for="eName" expr="Employee Name"/>
+</action-attrs>
+
+<action-attrs name="alter.some.comm.onChang" model="com.axelor.employees.db.Employees">
+<attribute name="value" for="comm" expr="eval:comm=comm+100.00" if="eval:job!='CLERK'" />
+</action-attrs>
+
+<action-attrs name="action.employees.attrs.addNewSelction.onNew.job">
+<attribute name="value" for="job" expr="eval:job='Team Lead'"/>
+</action-attrs>
+
+<action-attrs name="action.refrace.daslet.employeePerDepartment.chart" model="com.axelor.employees.db.Employees">
+<attribute name="refresh" for="barDashlet" expr="false"/>
+</action-attrs>
+
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+  
+	<module package="com.axelor.information.db" name="incharge"  />
+	
+	<entity name="Incharge">
+	<string name="name"/>
+	<one-to-many ref="com.axelor.information.db.ProjectTask" name="project"/>
+	</entity>
+</domain-models>

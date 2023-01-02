@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE xml>
+
+<employee-employees>
+
+
+	<bonuses>
+		<bonus>
+			<ename>bbs</ename>
+			<job>manager</job>
+			<sal>10000</sal>
+			<comm>100</comm>
+			<my>
+				<occasionalList>
+					<occasional>
+						<name>one</name>
+						<days>1</days>
+						<bonusId>1</bonusId>
+						<flag>true</flag>
+					</occasional>
+
+					<occasional>
+						<name>two</name>
+						<days>2</days>
+						<bonusId>2</bonusId>
+						<flag>false</flag>
+					</occasional>
+					<occasional>
+						<name>three</name>
+						<days>3</days>
+						<bonusId>3</bonusId>
+						<flag>no</flag>
+					</occasional>
+				</occasionalList>
+			</my>
+		</bonus>
+
+		<bonus>
+			<ename>akd</ename>
+			<job>manager</job>
+			<sal>8000</sal>
+			<comm>100</comm>
+			<my>
+				<occasionalList>
+					<occasional>
+						<name>four</name>
+						<days>4</days>
+						<bonusId>4</bonusId>
+					</occasional>
+
+					<occasional>
+						<name>five</name>
+						<days>5</days>
+						<bonusId>5</bonusId>
+						<flag>f</flag>
+					</occasional>
+					<occasional>
+						<name>six</name>
+						<days>6</days>
+						<bonusId>6</bonusId>
+						<flag>t</flag>
+					</occasional>
+				</occasionalList>
+			</my>
+		</bonus>
+
+		<bonus>
+			<ename>smd</ename>
+			<job>salesman</job>
+			<sal>1000</sal>
+			<comm>100</comm>
+			<my>
+				<occasionalList>
+					<occasional>
+						<name>seven</name>
+						<days>7</days>
+						<bonusId>7</bonusId>
+						<flag></flag>
+					</occasional>
+
+					<occasional>
+						<name>eight</name>
+						<days>8</days>
+						<bonusId>8</bonusId>
+						<flag>n</flag>
+					</occasional>
+				</occasionalList>
+			</my>
+		</bonus>
+	</bonuses>
+</employee-employees>

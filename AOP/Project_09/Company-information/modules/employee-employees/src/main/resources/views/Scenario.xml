@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+  
+<form name="scenario-form" title="Scenario" model="com.axelor.employees.db.Scenario">
+  <panel title="Overview">
+    <field name="name"/>
+    <field name="hours"/>
+  </panel>
+  <panel-related field="occasionallist" title="Occasional"/>
+</form>
+
+<grid name="scenario-grid" title="Scenarios" model="com.axelor.employees.db.Scenario" edit-icon="true">
+  <field name="name"/>
+  <field name="hours"/>
+</grid>
+
+<action-view name="all.scenario" title="All Scenario" model="com.axelor.employees.db.Scenario">
+<view type="grid" name="scenario-grid"/>
+<view type="form" name="scenario-form"/>
+</action-view>
+
+</object-views>
+
+
+

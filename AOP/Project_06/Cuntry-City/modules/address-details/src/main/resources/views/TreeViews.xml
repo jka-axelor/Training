@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+  
+  <tree name="address-tree" title="Address Tree">
+  
+  <!-- define tree columns -->
+  <column name="title" type="string" /> 
+  <column name="abbr" type="string" />
+
+  <!-- define 1st level node -->
+  <node model="com.axelor.address.db.Country"> 
+    <field name="name" as="title" />
+    <field name="code" as="abbr"/>
+  </node>
+
+  <!-- define 2nd level node -->
+  <node model="com.axelor.address.db.State" parent="country"
+    draggable="true"> 
+     <field name="name" as="title" />
+    <field name="code" as="abbr"/>
+    </node>
+    <!-- define 3rd level node -->
+  <node model="com.axelor.address.db.City" parent="state"
+    draggable="true"> 
+     <field name="name" as="title" />
+    <field name="code" as="abbr"/>
+    
+  </node>
+  
+  </tree>
+  
+ 
+  
+ </object-views>

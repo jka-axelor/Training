@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Wed Dec 07 11:44:16 IST 2022
+org.eclipse.jst.j2ee.server\:/binary\:/var/home/axelor/opt/gradle/caches/modules-2/files-2.1/org.apache.tomcat.embed/tomcat-embed-jasper/8.5.54/973752fefe5ba7886bde7dd66300b72a89549c68/tomcat-embed-jasper-8.5.54.jar=WEB-INF/lib/tomcat-embed-jasper-8.5.54.jar
+org.eclipse.jst.j2ee.server\:/binary\:/var/home/axelor/opt/gradle/caches/modules-2/files-2.1/com.axelor/axelor-el/8.5.54/bd225ba197535f4c188d109595967bb51ed28fa/axelor-el-8.5.54.jar=WEB-INF/lib/axelor-el-8.5.54.jar
+org.eclipse.jst.j2ee.server\:Student-Details=WEB-INF/lib/Student-Details.jar

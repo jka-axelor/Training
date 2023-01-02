@@ -1,0 +1,12 @@
+arguments=
+auto.sync=false
+eclipse.preferences.version=1
+experimental.module.support=false
+gradle.build.scans=false
+gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)
+gradle.offline.mode=false
+gradle.user.home=/home/axelor/opt/gradle
+java.home=/home/axelor/opt/jdk-8
+jvm.arguments=
+show.console.view=true
+show.executions.view=true

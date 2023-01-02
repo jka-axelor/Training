@@ -1,0 +1,68 @@
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+
+
+	<module package="com.axelor.employees.db" name="employees" />
+	<entity name="Employees" cachable="true" persistable="true"
+		logUpdates="true">	
+		<binary name="photo" image="true" />
+		<string name="title" />
+		<string name="firstname" />
+		<string name="middlename" nullable="true" />
+		<string name="lastname"  />
+		
+		<string name="fullName">
+		  <![CDATA[
+    if (firstname == null && lastname == null)
+        return null;
+    if (title == null)
+        return firstname + middlename + lastname;
+    return  firstname + middlename + lastname;
+  ]]>
+		</string>
+		<date name="dateofjoining" />
+		<long name="phonenumber" column="phno" unique="true"
+			min="1000000000" />
+		<boolean name="active" massUpdate="true"/>
+		<decimal name="salary" precision="7" scale="2" />
+
+		<one-to-one ref="com.axelor.employees.db.Department"
+			name="department" />
+		<one-to-one ref="com.axelor.employees.db.Manager"
+			name="manager" />
+		<many-to-many ref="com.axelor.employees.db.Hollyday"
+			name="hollydas" />
+		<index columns="firstname,lastname" name="fullname" />
+
+<finder-method name="getfirstname" using="firstname"/>
+
+
+		<extra-imports>
+		<![CDATA[
+      import com.axelor.imp.*;
+      import javax.persistence.*;
+          ]]>
+		</extra-imports> 
+		
+		<extra-code>
+		<![CDATA[
+		@PrePersist
+	     public void fullname(Employees em)
+	     {
+	    System.out.println("Contact saved");
+		Show.mas();
+		Show.priny(em);
+		}
+		]]>
+		</extra-code>
+		
+		<entity-listener class="com.axelor.employees.db.repo.EmployeesRepository"/>
+	</entity> 
+	
+	
+</domain-models>
+
+

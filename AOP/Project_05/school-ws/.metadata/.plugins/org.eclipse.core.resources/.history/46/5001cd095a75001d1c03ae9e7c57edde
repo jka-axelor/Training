@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<grid model="com.axelor.student.db.Students" title="Students"
+		name="students-grid" editable="false" edit-icon="true" orderBy="std"   
+		 freeSearch="date_of_barth,std"
+		canNew="false" canDelete="false" canMove="false" canSave="false" groupBy="father_name,father_profession" canArchive="true">
+ <!-- canMove and goroup by will never used in same grid -->
+ 
+ 
+		<field name="insertedOn" css="bg-primary"/>
+		<field name="photo" />
+		<field name="serial" />
+		<field name="firstname" />
+		<field name="middlename" />
+		<field name="lastname" />
+		<field name="std" title="class" />
+		<field name="date_of_barth" />
+		<field name="father_name" />
+		<field name="father_profession" />
+		<field name="mother_name" />
+		<field name="mother_profession" widget="hilite-success" />
+		<button onClick="student.all" name="click" prompt="just a demo" icon="fa-rocket" css="bg-danger"/>
+	</grid>
+
+	<form name="students-form" title="Student"
+		model="com.axelor.student.db.Students">
+		<panel title="Student-Details">
+			<field name="insertedOn" colSpan="3" />
+			<spacer />
+			<field name="photo" canNew="photo" />
+			<spacer />
+			<field name="serial" colSpan="2" />
+			<spacer />
+			<field name="fullName" readonly="false">
+				<editor>
+					<spacer />
+					<field name="firstname" colSpan="12" bgColor="red" />
+					<spacer />
+					<field name="middlename" colSpan="12" />
+					<spacer />
+					<field name="lastname" colSpan="12" />
+				</editor>
+			</field>
+			<field name="date_of_barth" />
+			<field name="std" selection="student-class"
+				widget="RadioSelect" />
+			<field name="father_name" />
+			<field name="father_profession" />
+			<field name="mother_name" />
+			<field name="mother_profession" />
+			<button name="customBtn" title="Click Me!"
+				onClick="student.all" prompt="This is a confirmation message."
+				icon="fa-check-square-o" />
+		</panel>
+
+		<panel colSpan="12" attached="true" showFrame="false"
+			title="The barth mark" name="birthmark-panekl">
+			<field name="birthmark" colSpan="12" />
+			<field name="some" />
+			<field name="$another" type="integer" min="1" max="100" />
+			<field name="emails">
+				<editor layout="table" onNew="compute-default-email" x-viewer="false">
+					<field name="email" />
+					<field name="primary" widget="toggle" x-icon="fa-star-o"
+						x-icon-active="fa-star" x-exclusive="true" />
+					<!-- widget="taggel" show edditable from views for boolean type fild -->
+					<field name="optOut" widget="toggle" x-icon="fa-ban" />
+					<field name="invalid" widget="toggle"
+						x-icon="fa-exclamation-circle" />
+				</editor>
+			</field>
+		</panel>
+
+		<!-- EXAMPLE OF PANEL-TAB IT WILL APPER AS A MENU FOR THE CHILD PANNNEL 
+			EXAMOLE IN HRM PROFILE SECTION -->
+
+		<panel-tabs name="panel-tabes">
+
+			<panel name="sidebarPanel" sidebar="true" itemSpan="3"
+				title="ALL LOG">
+				<field name="createdOn" readonly="true" />
+				<field name="createdBy" readonly="true" />
+				<field name="updatedOn" readonly="true" />
+				<field name="updatedBy" readonly="true" />
+			</panel>
+		</panel-tabs>
+
+		<!-- EXAMPLE OF PANNEL-STACK WE CAN RLAT SOME SPACFIC INFO TO SAVE RELATED 
+			TO OUR SELCTION DONE IN OUR SELECTION FILED -->
+		<panel-stack showIf="std">
+			<panel title="Page 1" showIf="std == 'l_kg'" />
+			<panel title="Page 2" showIf="std == 'iii'" />
+			<panel title="Page 3" showIf="std == 'IX'" />
+		</panel-stack>
+
+
+		<!-- PANEL RELATED IS ESTABLISED ACCORDING TO THE RELATION WE DEFINED USING 
+			IT EAXMPLE GO TO PROJECT_03 -->
+
+		<!-- PANNEL-INCLUDE example in Project_03 in department form -->
+
+
+
+		<!-- Example of panel-dashlet it is use for -->
+		<panel-dashlet action="student.all" title="All Student"
+			canSearch="true" colSpan="12" />
+
+
+
+	</form>
+
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<selection name="child.selection">
+		<option value="0" color="lightgreen">0</option>
+		<option value="1" color="blue">1</option>
+		<option value="2" color="yellow">2</option>
+		<option value="3" color="deeporange">3</option>
+		<option value="4" color="red"> more</option>
+	</selection>
+
+	<selection name="family.selection">
+		<option value="small" color="lightgreen">small</option>
+		<option value="mid" color="blue">mid</option>
+		<option value="large" color="yellow">large</option>
+		<option value="explode" color="deeporange">explode</option>
+	</selection>
+
+
+	<form name="person-form" title="Person"
+		model="com.axelor.information.db.Person">
+		<panel title="Input_Info">
+			<field name="image" widget="Image" colSpan="12" />
+			<field name="fullName" />
+			<field name="inputslno" />
+			<field name="phoneNumber" />
+			<field name="dateOfBirth" />
+			<field name="note" />
+			<field name="monthlyIncome" />
+			<field name="familySize" />
+			<field name="numberOfChild" selection="child.selection" />
+			<button onClick="Master.information" name="oneinfo"
+				title="Masterinfo" />
+			<button onClick="custum.view" name="test" title="custominfo" />
+		</panel>
+		<panel name="sidePanel" sidebar="true">
+			<field name="createdOn" />
+			<field name="createdBy" />
+			<field name="updatedOn" />
+			<field name="updatedBy" />
+		</panel>
+	</form>
+
+	<grid name="person-grid" title="People"
+		model="com.axelor.information.db.Person">
+		<toolbar>
+			<button onClick="one.information" name="oneinfo"
+				icon="fa-regular fa-eye" />
+			<button onClick="custum.view" name="test" title="custominfo" />
+		</toolbar>
+		<field name="fullName" />
+		<field name="inputslno" />
+		<field name="phoneNumber" />
+		<field name="image" />
+		<field name="dateOfBirth" />
+		<field name="monthlyIncome" />
+		<field name="familySize" />
+		<field name="numberOfChild" selection="child.selection" />
+	</grid>
+
+
+	<action-view name="grid-action" title="test">
+		<view type="grid" name="person-grid" />
+	</action-view>
+
+	<cards name="persion-cards"
+		model="com.axelor.information.db.Person" title="PersionAllInformation"
+		orderBy="inputslno">
+		<field name="image" />
+		<field name="fullName" />
+		<field name="phoneNumber" />
+		<field name="dateOfBirth" />
+		<field name="monthlyIncome" />
+		<template> <![CDATA[
+		
+		 <div class="span4 card-image" >
+    <img ng-if="image" ng-src="{{$image(null, 'image')}}" style="width: 100%; height: 100%; object-fit: contain;">
+    <img ng-if="!image" src="img/user.png">
+    <strong>{{fullName}}</strong>
+     <strong>{{phoneNumber}}</strong>
+      <strong>{{dateOfBirth}}</strong>
+       <strong>{{monthlyIncome}}</strong>
+  </div>
+		
+		]]>
+		
+		</template>
+	</cards>
+
+
+
+	<kanban columnBy="familySize"
+		model="com.axelor.information.db.Person" sequenceBy="numberOfChild"
+		title="KanbanView" name="person.kanban" onNew="Master.information"
+		limit="1">
+		<field name="fullName" />
+		<field name="inputslno" />
+		<field name="phoneNumber" />
+		<field name="dateOfBirth" />
+		<field name="note" />
+		<field name="monthlyIncome" />
+		<hilite color="danger" if="numberOfChild == 4" />
+		<hilite color="info" if="numberOfChild == 3" />
+		<hilite color="success" if="numberOfChild == 2" />
+		<hilite color="warning" if="numberOfChild == 1" />
+		<hilite color="success" if="numberOfChild == 0" />
+		<template>
+		<![CDATA[
+		
+		<h4>{{fullName}}</h4>
+		<div class="card-body">{{note}}</div>
+  <div class="card-footer">
+      <i class='fa fa-clock-o'></i> <span>Due Date: {{enddate|date:'DD-MM-YYYY'}}</span>
+     <br>
+          <strong>{{monthlyIncome}}</strong>
+  </div>
+		]]>
+		</template>
+	</kanban>
+
+</object-views>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+  
+	<menuitem name="menu-detail-manufacturer" title="Manufactur" />
+	<menuitem name="menu-detail-manufactur"
+		parent="menu-detail-manufacturer" title="All DETAILS"
+		action="details.all" />
+	<action-view name="details.all" title="Details"
+		model="com.axelor.manufacturer.db.Manufacturer">
+		<view type="grid" name="manufactur-grid"/>
+		<view type="form" name="manufactur-form" />
+	</action-view>
+	
+	
+	
+	
+	<menuitem name="menu-address-detail-manufactur"
+		parent="menu-detail-manufacturer" title="All Address"
+		action="address.details.all" />
+	<action-view name="address.details.all" title="Address"
+		model="com.axelor.manufacturer.db.Address">
+<!-- 		<view type="form" name="address-form" /> -->
+		<view type="grid" name="address-grid"/>
+	</action-view>
+	
+	
+	
+	<menuitem name="menu-contact-detail-manufactur"
+		parent="menu-detail-manufacturer" title="All Contact"
+		action="contact.details.all" />
+	<action-view name="contact.details.all" title="Contact"
+		model="com.axelor.manufacturer.db.Contact">
+<!-- 		<view type="form" name="contact-form" /> -->
+		<view type="grid" name="contact-grid"/>
+	</action-view>
+	
+</object-views>

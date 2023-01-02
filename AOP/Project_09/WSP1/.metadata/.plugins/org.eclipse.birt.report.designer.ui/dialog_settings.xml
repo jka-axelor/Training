@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="Shell {Edit Data Set - Data Set} [layout=GridLayout {numColumns=5 verticalSpacing=5}]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="0"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@13bc8778]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="563"/>
+		<item key="DIALOG_Y_ORIGIN" value="203"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Select Data Binding} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {Edit Image Item} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@13bc8778]">
+		<item key="DIALOG_X_ORIGIN" value="-266"/>
+		<item key="DIALOG_Y_ORIGIN" value="4"/>
+		<item key="DIALOG_WIDTH" value="970"/>
+		<item key="DIALOG_HEIGHT" value="452"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source} [layout=GridLayout {numColumns=5 verticalSpacing=5}]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="-1360"/>
+		<item key="DIALOG_Y_ORIGIN" value="223"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1} [layout=GridLayout {numColumns=5 verticalSpacing=5}]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="0"/>
+		<item key="DIALOG_Y_ORIGIN" value="0"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus2.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@13bc8778]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="563"/>
+		<item key="DIALOG_Y_ORIGIN" value="203"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus2.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@13bc8778]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="563"/>
+		<item key="DIALOG_Y_ORIGIN" value="203"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus2.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@7bbce84a]">
+		<item key="SASHFORM.LEFT" value="160"/>
+		<item key="SASHFORM.RIGHT" value="640"/>
+		<item key="DIALOG_X_ORIGIN" value="563"/>
+		<item key="DIALOG_Y_ORIGIN" value="203"/>
+		<item key="DIALOG_WIDTH" value="800"/>
+		<item key="DIALOG_HEIGHT" value="500"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="Shell {Edit Text Item} [layout=GridLayout {numColumns=5 verticalSpacing=5}]/Shell {WSP1 - employee-employees/src/main/resources/reports/bonus2.rptdesign - Eclipse IDE} [layout=org.eclipse.e4.ui.workbench.renderers.swt.TrimmedPartLayout@7bbce84a]">
+		<item key="DIALOG_X_ORIGIN" value="527"/>
+		<item key="DIALOG_Y_ORIGIN" value="168"/>
+		<item key="DIALOG_WIDTH" value="873"/>
+		<item key="DIALOG_HEIGHT" value="552"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+</section>

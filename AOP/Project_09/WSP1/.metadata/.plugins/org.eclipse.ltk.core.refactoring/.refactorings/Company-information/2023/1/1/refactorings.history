@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.axelor.demo.Mailservice&apos; to &apos;MyMailservice&apos;&#x0A;- Original project: &apos;Company-information&apos;&#x0A;- Original element: &apos;com.axelor.demo.Mailservice&apos;&#x0A;- Renamed element: &apos;com.axelor.demo.MyMailservice&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Mailservice&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/gradle_scope=/main=/=/gradle_used_by_scope=/main,test=/&lt;com.axelor.demo{Mailservice.java[Mailservice" matchStrategy="1" name="MyMailservice" qualified="false" references="true" similarDeclarations="false" stamp="1672660422673" textual="false" version="1.0"/>
+</session>

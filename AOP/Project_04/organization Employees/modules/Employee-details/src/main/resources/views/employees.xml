@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<grid model="com.axelor.employees.db.Employees"
+		title="All employees" name="employees-grid">
+		
+		<field name="photo" />
+		<field name="title" />
+		<field name="firstname" />
+		<field name="middlename" />
+		<field name="lastname" />
+		<field name="fullName"/>
+		<field name="dateofjoining" />
+		<field name="phonenumber" />
+		<field name="active" />
+		<field name="salary" />
+		<field name="department" />
+	</grid>
+
+	<form model="com.axelor.employees.db.Employees" title="Employees"
+		name="employees-form" width="large">
+		<panel title="Employeesform" name="emp" icon="fa-solid fa-user"
+			icon-background="blue">
+			<field name="photo" />
+			<field name="title" selection="employess-prefix"/>
+			<field name="firstname" help="https://www.youtube.com/results?search_query=hibernate+tutorial" />
+			<field name="middlename" />
+			<field name="lastname" />
+			<field name="fullName" />
+			<field name="dateofjoining" />
+			<field name="phonenumber" min="1000000000" max="9999999999" />
+			<field name="active" widget="toggle" colSpan="1" x-icon="fa-ban" x-icon-ative="fa-solid fa-user"/>
+			<spacer/>
+			<field name="salary" />
+			<field name="department" />
+			<field name="manager"/>
+			<field name="conditon"/>
+			<field name="hollydas" colSpan="12"/>
+		</panel>
+		
+	</form>
+
+	<selection name="employess-prefix">
+		<option value="mr" color="red">MR</option>
+		<option value="mrs" color="pink">MRS</option>
+	</selection>
+
+</object-views>
+

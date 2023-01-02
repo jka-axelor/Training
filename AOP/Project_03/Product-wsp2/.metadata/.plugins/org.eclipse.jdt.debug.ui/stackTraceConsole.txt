@@ -1,0 +1,14 @@
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	<module package="com.axelor.product.db" name="product" />
+	<entity name="Product">
+		<string name="productname" />
+		<date name="mfd" />
+		<date name="exd" />
+		<integer name="batchnumber" />
+	</entity>
+
+</domain-models>

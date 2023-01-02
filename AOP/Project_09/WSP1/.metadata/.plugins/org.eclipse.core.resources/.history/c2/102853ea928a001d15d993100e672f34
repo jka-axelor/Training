@@ -1,0 +1,5 @@
+package com.axelor.mail;
+
+public class MailServiceImp {
+
+}

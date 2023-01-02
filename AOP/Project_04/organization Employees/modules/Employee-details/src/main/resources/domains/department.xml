@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	<module package="com.axelor.employees.db" name="employees"  />
+
+<!-- 	<enum name="Country"> -->
+<!-- 		<item name="INDIA" /> -->
+<!-- 		<item name="USA" /> -->
+<!-- 		<item name="USSR" /> -->
+<!-- 		<item name="FR" /> -->
+<!-- 	</enum> -->
+
+	<entity name="Department" persistable="true" table="DEPARTMENTS"
+		lang="java" jsonAttrs="false">
+   
+		<!-- <string name="location" default="india" insertable="true" updatable="true"/> -->
+		
+<!-- 		<enum name="location" ref="Country" /> -->
+		<string name="depertmentnames"
+			help="it show the department name if you want to change ple contact on the given number"
+			unique="true" required="true" column="dept" insertable="true"
+			updatable="true" />
+
+		<one-to-many ref="com.axelor.employees.db.Manager"
+			name="manager" mappedBy="department" />
+		<one-to-many ref="com.axelor.employees.db.Employees"
+			name="employees" mappedBy="department" />
+	</entity>
+
+
+</domain-models>

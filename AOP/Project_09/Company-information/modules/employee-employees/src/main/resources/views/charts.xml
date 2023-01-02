@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<chart name="total.employees.department.bar"
+		title="Department person bar">
+		
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="deptno" type="bar" />
+	</chart>
+
+
+
+<chart name="total.employees.department.pie"
+		title="Department person pie">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="deptno" type="pie" />
+	</chart>
+
+
+<chart name="total.employees.department.area"
+		title="Department person Area">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total"  type="area" />
+	</chart>
+
+
+<chart name="total.employees.department.donut"
+		title="Department person donut">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="donut" />
+	</chart>
+
+
+<chart name="total.employees.department.hbar"
+		title="Department person hbar">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="hbar" />
+	</chart>
+
+
+<chart name="total.employees.department.line"
+		title="Department person line">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="line" title="NumberOfemp"/>
+	</chart>
+
+<chart name="total.employees.department.funnel"
+		title="Department person funnel">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="funnel" title="NumberOfemp"/>
+	</chart>
+
+<chart name="total.employees.department.gauge"
+		title="Department person gauge">
+		<dataset type="sql">
+select count(*) as total from employees_employees;
+
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="gauge" title="NumberOfemp"/>
+	</chart>
+
+
+<chart name="total.employees.department.scatter"
+		title="Department person scatter">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="scatter" title="NumberOfemp"/>
+	</chart>
+
+
+<chart name="total.employees.department.radar"
+		title="Department person radar">
+		<dataset type="sql">
+select deptno as dept ,count(*) as total from employees_employees group by deptno
+</dataset>
+		<category key="dept" type="number" />
+		<series key="total" groupBy="dept" type="radar" title="NumberOfemp"/>
+	</chart>
+
+</object-views>

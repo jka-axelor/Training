@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+<selection name="job.selection">
+<option value="CLERK">CLERK</option>
+<option value="SALESMAN">SALESMAN</option>
+<option value="MANAGER">MANAGER</option>
+<option value="PRESIDENT">PRESIDENT</option>
+<option value="ANALYST">ANALYST</option>
+</selection>
+
+
+<selection name="refselection-demo">
+<option value="com.axelor.employees.db.Bonus">Bonus</option>
+<option value="com.axelor.employees.db.Department" data-grid="department-grid">Department</option>
+</selection>
+
+</object-views>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+<tree name="project-task-tree" title="Project Tasks">
+
+  <column name="title" type="string" /> 
+  <column name="progress" type="integer" />
+
+  <node model="com.axelor.employees.db.Department"
+    draggable="true" onClick="all.managers"> 
+    <field name="location"  />
+    <field name="depertmentnames" />
+  </node>
+
+<!-- 	<node model="com.axelor.employees.db.Manager" parent="Department"> -->
+<!-- 		<field name="name" as="firstname" /> -->
+<!-- 	</node> -->
+
+  
+</tree>
+</object-views>
+
+
+
+
+

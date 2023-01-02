@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+
+
+
+	<custom name="report.total.sale" title="Total sale">
+		<!-- <field name="fullName" /> -->
+
+		<!-- <field name="numberOfChild" selection="child.selection" /> -->
+
+		<dataset type="jpql">
+  <![CDATA[
+  select self.fullName as total , self.phoneNumber as pno ,self.numberOfChild as cno from Person self where self.numberOfChild < 4
+  ]]>
+  </dataset>
+		<template>
+  <![CDATA[
+  <div class="report-data">
+  <h1>jaga</h1>
+  <report-table data='data' columns='total,pno,cno'></report-table>
+     <div class="report-percent font-bold text-info pull-right">20% <i class="fa fa-level-up"></i></div>
+    <div class="report-tags"><span class="label label-important">Monthly</span></div>
+  </div>
+  ]]>
+  </template>
+	</custom>
+
+	<custom name="report.total.child" title="Total Child">
+		<dataset type="rpc">com.axelor.person.server.PersonController:say</dataset>
+
+		<template>
+		
+		<![CDATA[
+   <report-box icon='fa fa-level-up' label='Total Child' value='first.total' tag='first.tag' percent='first.percent' tag-css='first.tagCss'/>
+      ]]> 
+		</template>
+	</custom>
+
+</object-views>
+
+
+
+
+
+
+
+
+
+

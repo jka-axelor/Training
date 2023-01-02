@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+  
+<form name="occasional.form" title="Occasional Form" model="com.axelor.employees.db.Occasional" >
+  <panel title="Overview" itemSpan="12">
+    <field name="name"/>
+    <field name="days"/>
+    <field name="bonusId" title="Bonus ID"/>
+    <field name="Department" selection="refselection-demo" widget="RefSelect"/>
+    <field name="bonus">
+    
+    <viewer>
+  <![CDATA[
+  <strong>{{ename}}</strong>
+  ]]>
+  </viewer>
+  <editor>
+    <field name="ename" />
+    <field name="sal" />
+  </editor>
+    </field>
+  </panel>
+</form>
+
+
+<grid name="occasional.grid" title="Occasionals Grid" model="com.axelor.employees.db.Occasional">
+  <field name="name"/>
+  <field name="days"/>
+  <field name="bonusId" title="Bonus ID"/>
+  <field name="bonus"/>
+</grid>
+
+</object-views>
+
+
+

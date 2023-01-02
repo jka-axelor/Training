@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+  
+	<module package="com.axelor.information.db"
+		name="projectWorkFlow" />
+
+	<sequence name="inpt.sequence" initial="1" padding="5"
+		increment="1" prefix="sl" suffix="no" />
+
+	<entity name="ProjectTask">
+	
+		<string name="projectName" required="true" />
+		<datetime name="startingDate" />
+		<datetime name="endingDate" />
+		<decimal name="progress" min="0" max="100"/>
+		<many-to-one ref="com.axelor.information.db.Incharge"
+			name="incharge" />
+			
+			<many-to-many ref="ProjectTask" name="finishToStartTaskSet"/>
+	</entity>
+
+
+</domain-models>

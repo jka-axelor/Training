@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+
+	<form model="com.axelor.information.db.ProjectTask"
+		title="Project_Form" name="projectTask.from">
+		<panel name="Project.panel" title="Project">
+		<field name="projectName" />
+		<field name="startingDate" />
+		<field name="endingDate" />
+		<field name="incharge" />
+		<field name="progress"/>
+	</panel>
+	<panel-related field="finishToStartTaskSet"/>
+	</form>
+
+	<grid model="com.axelor.information.db.ProjectTask"
+		title="Project_Grid" name="projectTask.grid">
+		<toolbar>
+		<button onClick="project.gentt.views" name="gantt.view.project" title="Gantt"/>
+		</toolbar>
+		<field name="projectName" />
+		<field name="startingDate" />
+		<field name="endingDate" />
+		<field name="progress"/>
+		<field name="incharge" />
+	</grid>
+
+	<calendar name="project-task-calendar-my" title="My Tasks"
+		model="com.axelor.information.db.ProjectTask" colorBy="incharge"
+		eventStart="startingDate" eventStop="endingDate" eventLength="8">
+		<field name="projectName" />
+	</calendar>
+
+	<gantt model="com.axelor.information.db.ProjectTask"
+	 name="gantt.project"
+		taskStart="startingDate" 
+		taskEnd="endingDate"
+		title="Gantt chart" 
+		taskParent="incharge" 
+		taskProgress="progress"
+	    x-finish-to-finish="finishToStartTaskSet">
+		<field name="projectName"/>
+		<field name="incharge.name"/>
+	</gantt>
+
+  <action-view name="project.gentt.views" title="Gantt" model="com.axelor.information.db.ProjectTask">
+    <view type="gantt" name="gantt.project"/>
+  </action-view>
+</object-views>
+
+
+
+
+
+
+
+
+
+

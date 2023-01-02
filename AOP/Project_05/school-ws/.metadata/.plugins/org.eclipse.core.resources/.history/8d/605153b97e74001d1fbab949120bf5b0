@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<selection name="student-class">
+		<option value="l_kg">L_KG</option>
+		<option value="u_kg">U_KG</option>
+		<option value="i">I</option>
+		<option value="ii">II</option>
+		<option value="iii">III</option>
+		<option value="iv">IV</option>
+		<option value="v">V</option>
+		<option value="vi">VI</option>
+		<option value="vii">VII</option>
+		<option value="vii">VIII</option>
+		<option value="ix">IX</option>
+		<option value="x">X</option>
+	</selection>
+<form model="Student-Details" title="Panel-include-demo" name="Panel-include-demo-form">
+<panel>
+<field name="demo"/>
+</panel>
+</form>
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+

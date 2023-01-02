@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<form name="bonus-form" title="Bonus"
+		model="com.axelor.employees.db.Bonus">
+		<toolbar>
+			<button onClick="action-report-bonus" name="btnPrint"
+				icon="fa-print" />
+		</toolbar>
+		<panel title="Bonus">
+			<field name="ename" />
+			<field name="job" />
+			<field name="sal" />
+			<field name="comm" />
+		</panel>
+		<panel-related field="occasionalList" title="occasion" />
+	</form>
+
+	<grid name="bonus-grid" title="Bonus"
+		model="com.axelor.employees.db.Bonus" edit-icon="true">
+		<field name="ename" />
+		<field name="job" />
+		<field name="sal" />
+		<field name="comm" />
+	</grid>
+
+
+	<action-report output="Bonus-${date}${time}"
+		name="action-report-bonus" design="bonus.rptdesign" format="pdf">
+		<param name="bonusId" expr="eval: id" />
+	</action-report>
+
+</object-views>
+
+
+
+ 

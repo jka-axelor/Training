@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	<module package="com.axelor.employees.db" name="employees" />
+
+	<entity name="Employees">
+		<string name="eName" required="true" unique="true" />
+		<string name="job" required="true" selection="job.selection"/>
+		<string name="mgr" required="true" />
+		<date name="hiredate" required="true" />
+		<decimal name="sal" scale="2" precision="7" />
+		<decimal name="comm" precision="6" scale="2" />
+		<many-to-one ref="com.axelor.employees.db.Department"
+			name="deptno" required="true" />
+
+		<track>
+			<field name="eName" on="ALWAYS"/>
+			<field name="job" on="UPDATE"/>
+			<field name="hiredate" on="CREATE" />
+			<field name="comm" />
+			<field name="sal" />
+			<message if="true" on="CREATE" tag="warning">WellCome</message>
+			<message if="true" on="ALWAYS">Some Changes have been  Done</message>
+			<message if="job == 'MANAGER'" on="UPDATE">its a manager </message>
+			<message if="sal &gt;=1000" tag="success">Good sal for</message>
+		</track>
+
+
+	</entity>
+
+
+</domain-models>

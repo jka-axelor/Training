@@ -1,0 +1,5 @@
+
+
+rootProject.name = 'Product-info'
+
+include "modules:Product-Details"

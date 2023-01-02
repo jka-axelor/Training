@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<menuitem name="menu-detail-manufacturer"
+		title="Employees Details" icon-background="red"
+		icon="fa-solid fa-users" />
+	<menuitem name="menu-detail-manufactur"
+		parent="menu-detail-manufacturer" title="All Employees"
+		action="employees.all" />
+	<action-view name="employees.all" title="Details"
+		model="com.axelor.employees.db.Employees">
+		<view type="grid" name="employees-grid" />
+		<view type="form" name="employees-form" />
+	</action-view>
+
+
+	<menuitem title="Department Details"
+		name="menu-detail-departments" icon-background="yellow" />
+	<menuitem title="All Department" name="menu-detail-department"
+		parent="menu-detail-departments" action="department.employees.all" />
+	<action-view name="department.employees.all"
+		title="Department" model="com.axelor.employees.db.Department2">
+		<view type="grid" name="department2-grid" />
+		<view type="form" name="department2-form" />
+	</action-view>
+
+	<menuitem title="Hollyday Details"
+		name="menu-detail-hollydays" icon-background="violet" /> 
+		
+	<menuitem title="All Department" name="menu-detail-hollyday"
+		parent="menu-detail-hollydays" action="department.hollyday.all" />
+		
+	<action-view name="department.hollyday.all"
+		title="hollyday" model="com.axelor.employees.db.Hollyday">
+		<view type="grid" name="hollyday-grid" />
+		<view type="form" name="hollyday-form" />
+	</action-view>
+
+	<menuitem title="Manager Details" name="menu-detail-managers" />
+	<menuitem title="All Manager" name="menu-detail-manager"
+		parent="menu-detail-managers" action="all.managers"/>
+	<action-view name="all.managers" title="manager"
+		model="com.axelor.employees.db.Manager">
+		<view type="form" name="Manager-form" />
+		<view type="grid" name="Manager-grid" />
+	</action-view>
+	
+	<menuitem title="Tree views" name="tree-view-project3"/>
+	<menuitem title="Tree" name="sub-tree" parent="tree-view-project3" action="tree-demo"/>
+	<action-view name="tree-demo" title="Tree">
+	<view type="tree" name="project-task-tree"/>
+	</action-view>
+	
+	
+	<menuitem title="Configure" name="menu-configure"/>
+	<menuitem title="Country" name="menu-configure-country" parent="menu-configure" action="configure.all"/>
+	
+	<action-view name="configure.all" title="Country" model="com.axelor.employees.db.Country">
+		<view type="form" name="city-form"/>
+	</action-view>
+	
+</object-views>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

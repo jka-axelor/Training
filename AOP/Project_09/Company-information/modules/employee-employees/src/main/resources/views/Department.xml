@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+<form name="department-form" title="Department" model="com.axelor.employees.db.Department" >
+  <panel title="Department">
+    <field name="dname" widget="code-editor" x-code-syntax="xml" x-code-theme="red"/>
+    <field name="loc"  />
+    <button onClick="create.emp" name="action.script.use.json" title="new dept in" prompt="it is used to create a new dipt" icon="fa-check-square-o"/>
+  </panel>
+</form>
+
+<grid name="department-grid" title="Departments" model="com.axelor.employees.db.Department" edit-icon="true">
+  <field name="dname" widget="phone" x-placeholder-number-type="MOBILE"  />
+  <field name="loc" />
+</grid>
+
+
+</object-views>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models
+	xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+	<module package="com.axelor.employees.db" name="hollydays " />
+	
+	<sequence name="hollyday.seq.all" initial="1" increment="1" padding="5" prefix="sl" suffix="ep"/>
+	
+	<entity name="Hollyday" persistable="true" table="hollydays" lang="java">
+	
+	<integer name="numofdays" min="1" max="10"/>
+	
+	<string name="serial" sequence="hollyday.seq.all" readonly="true" encrypted="true"/>
+	
+	<string name="resion" multiline="true" />
+	<date name="starting_from"/>
+	<date name="ending_on"/>
+	
+	<many-to-many ref="com.axelor.employees.db.Manager" name="manager_hollydays"/>
+	<many-to-many ref="com.axelor.employees.db.Employees" name="employees_hollydays"/>
+	</entity>
+</domain-models>

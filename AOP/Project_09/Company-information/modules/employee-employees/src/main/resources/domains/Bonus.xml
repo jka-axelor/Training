@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/domain-models
+  http://axelor.com/xml/ns/domain-models/domain-models_5.4.xsd">
+  
+	<module package="com.axelor.employees.db" name="employees"  />
+	
+	<entity name="Bonus">
+	<string name="ename"/>
+	<string name="job"/>
+	<decimal name="sal" precision="7" scale="2"/>
+	<decimal name="comm" precision="7" scale="2"/>
+	<one-to-many ref="com.axelor.employees.db.Occasional" name="occasionalList" mappedBy="bonus"/>
+	</entity>
+
+
+</domain-models>

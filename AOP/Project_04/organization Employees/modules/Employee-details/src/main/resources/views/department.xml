@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://axelor.com/xml/ns/object-views
+  http://axelor.com/xml/ns/object-views/object-views_5.4.xsd">
+
+	<grid model="com.axelor.employees.db.Department2"
+		title="All department" name="department2-grid">
+		<field name="location" />
+		<field name="depertmentnames" />
+		<field name="pin" />
+	</grid>
+
+	<form model="com.axelor.employees.db.Department2"
+		title="Department" name="department2-form" width="large">
+		<panel name="department-panel" title="Head Quarters">
+			<field name="location" />
+			<field name="depertmentnames" />
+			<field name="pin" />
+		</panel>
+<!-- EXAMPLE OF PANAL INCLUD ITS INCLUDE THE EXTRA PANAL AND IS USED TO HAVE THE PANL VIEW IN FROM WE HAVE TO MANTION THE MODULE AND THE NAME OF THE FROM  -->
+		<panel-include view="hollyday-form"
+			from="Employee-details"  />
+	</form>
+
+
+
+</object-views>
